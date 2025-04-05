@@ -53,3 +53,16 @@ table tr:hover {
     background-color: #f1f1f1;
     cursor: pointer;
 }
+.search-bar-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    margin-bottom: 20px; /* Add spacing below the search bar */
+}
+
+.search-bar {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
