@@ -3,7 +3,7 @@ import '../CSS/Topbar.css';
 import HomeIcon from '@mui/icons-material/Home';
 import CategoryIcon from '@mui/icons-material/Category';
 import InfoIcon from '@mui/icons-material/Info';
-import MailIcon from '@mui/icons-material/Mail';
+
 
 const Topbar = () => {
     return (
@@ -20,9 +20,6 @@ const Topbar = () => {
                 </a>
                 <a href="/about">
                     <InfoIcon className="icon" /> About
-                </a>
-                <a href="/contact">
-                    <MailIcon className="icon" /> Contact
                 </a>
             </div>
         </div>
