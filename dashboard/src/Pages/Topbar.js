@@ -1,5 +1,9 @@
 import React from 'react';
-import '../CSS/Topbar.css'; // Import the CSS for the Topbar
+import '../CSS/Topbar.css'; 
+import HomeIcon from '@mui/icons-material/Home';
+import CategoryIcon from '@mui/icons-material/Category';
+import InfoIcon from '@mui/icons-material/Info';
+import MailIcon from '@mui/icons-material/Mail';
 
 const Topbar = () => {
     return (
@@ -8,10 +12,18 @@ const Topbar = () => {
                 <h1>My Website</h1>
             </div>
             <div className="topbar-links">
-                <a href="/">Home</a>
-                <a href="/products">Products</a>
-                <a href="/about">About</a>
-                <a href="/contact">Contact</a>
+                <a href="/">
+                    <HomeIcon className="icon" /> Home
+                </a>
+                <a href="/products">
+                    <CategoryIcon className="icon" /> Products
+                </a>
+                <a href="/about">
+                    <InfoIcon className="icon" /> About
+                </a>
+                <a href="/contact">
+                    <MailIcon className="icon" /> Contact
+                </a>
             </div>
         </div>
     );

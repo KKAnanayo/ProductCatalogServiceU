@@ -2,29 +2,42 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #14c78b; /* Dark blue background */
+    background-color: #14c7af; /* Dark blue background */
     color: white;
-    padding: 10px 20px;
+    padding: 20px 40px; /* Increased padding for a larger topbar */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
+    font-size: 18px; /* Increased font size */
 }
 
 .topbar-logo h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 28px; /* Larger logo text */
     font-weight: bold;
 }
 
+.topbar-links {
+    display: flex; /* Ensure links are displayed in a row */
+    align-items: center; /* Align icons and text vertically */
+}
+
 .topbar-links a {
-    margin: 0 15px;
+    margin: 0 15px; /* Add spacing between links */
     text-decoration: none;
     color: white;
-    font-size: 16px;
+    font-size: 18px; /* Increased font size for links */
+    display: flex; /* Ensure icon and text are aligned horizontally */
+    align-items: center; /* Align icon and text vertically */
     transition: color 0.3s ease;
 }
 
 .topbar-links a:hover {
     color: #f0a500; /* Highlight color on hover */
+}
+
+.icon {
+    margin-right: 8px; /* Add spacing between the icon and text */
+    font-size: 24px; /* Icon size */
 }
