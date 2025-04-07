@@ -44,7 +44,7 @@ const Product = () => {
             await createProduct(currentProduct);
         }
         setCurrentProduct({
-            id: '', 
+            id: '', // Reset id
             name: '',
             price: 0,
             description: '',
@@ -69,6 +69,7 @@ const Product = () => {
         if (!response.ok) {
             const errorData = await response.json();
             console.error("API Error:", errorData); 
+        }
     };
 
     const updateProduct = async (product) => {
