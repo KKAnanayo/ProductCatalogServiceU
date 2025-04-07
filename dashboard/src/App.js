@@ -2,14 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import Product from './Pages/Product';
-import Topbar from './Pages/Topbar'; // Import the Topbar component
-import ProductDetails from './Pages/ProductDetails'; // Import the ProductDetails component
-
+import Topbar from './Pages/Topbar'; 
+import ProductDetails from './Pages/ProductDetails'; 
 function App() {
   return (
     <Router>
       <div>
-        <Topbar /> {/* Topbar will always be visible */}
+        <Topbar /> 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Product />} />

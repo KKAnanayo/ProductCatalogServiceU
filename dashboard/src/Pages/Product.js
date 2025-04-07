@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import '../CSS/Products.css'; // Import Product-specific CSS
-
+import '../CSS/Products.css'; 
 const Product = () => {
     const [products, setProducts] = useState([]);
     const [currentProduct, setCurrentProduct] = useState({
-        id: '', // Add id to the state
+        id: '', 
         name: '',
         price: 0,
         description: '',
@@ -25,7 +24,7 @@ const Product = () => {
                 throw new Error('Failed to fetch products');
             }
             const data = await response.json();
-            console.log("Fetched products:", data); // Debug fetched data
+            console.log("Fetched products:", data); 
             setProducts(data);
         } catch (error) {
             console.error('Error fetching products:', error);
@@ -45,7 +44,7 @@ const Product = () => {
             await createProduct(currentProduct);
         }
         setCurrentProduct({
-            id: '', // Reset id
+            id: '', 
             name: '',
             price: 0,
             description: '',
@@ -58,7 +57,7 @@ const Product = () => {
     };
 
     const createProduct = async (product) => {
-        console.log("Sending product data:", product); // Debug the payload
+        console.log("Sending product data:", product); 
         const response = await fetch('https://localhost:7264/api/products', {
             method: 'POST',
             headers: {
@@ -69,8 +68,7 @@ const Product = () => {
 
         if (!response.ok) {
             const errorData = await response.json();
-            console.error("API Error:", errorData); // Log the error details
-        }
+            console.error("API Error:", errorData); 
     };
 
     const updateProduct = async (product) => {
@@ -85,7 +83,7 @@ const Product = () => {
 
     const handleEdit = (product) => {
         setCurrentProduct({
-            id: product.id, // Keep the ID internally for updating
+            id: product.id, 
             name: product.name,
             price: product.price,
             description: product.description,
@@ -107,7 +105,6 @@ const Product = () => {
         <div>
             <h2>{isEditing ? 'Edit Product' : 'Add Product'}</h2>
             <form onSubmit={handleSubmit}>
-                {/* Disabled textbox for ID */}
                 <input
                     type="text"
                     name="name"

@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import '../CSS/Home.css'; // Import Home-specific CSS
+import { Link } from 'react-router-dom'; 
+import '../CSS/Home.css'; 
 
 const Home = () => {
     const [products, setProducts] = useState([]);
-    const [searchQuery, setSearchQuery] = useState(''); // State for the search query
-    const [filteredProducts, setFilteredProducts] = useState([]); // State for filtered products
+    const [searchQuery, setSearchQuery] = useState(''); 
+    const [filteredProducts, setFilteredProducts] = useState([]); 
 
     useEffect(() => {
         fetchProducts();
     }, []);
 
     useEffect(() => {
-        // Filter products based on the search query
         const filtered = products.filter((product) =>
             product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
             product.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -30,14 +29,14 @@ const Home = () => {
             const data = await response.json();
             console.log("Fetched products:", data);
             setProducts(data);
-            setFilteredProducts(data); // Initialize filtered products
+            setFilteredProducts(data); 
         } catch (error) {
             console.error('Error fetching products:', error);
         }
     };
 
     const handleSearchChange = (e) => {
-        setSearchQuery(e.target.value); // Update the search query
+        setSearchQuery(e.target.value); 
     };
 
     return (
