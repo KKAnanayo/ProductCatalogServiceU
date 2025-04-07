@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import '../CSS/Home.css'; // Import Home-specific CSS
 
 const Home = () => {
@@ -66,7 +67,11 @@ const Home = () => {
                 <tbody>
                     {filteredProducts.map((product, index) => (
                         <tr key={product.id || index}>
-                            <td>{product.id}</td>
+                            <td>
+                                <Link to={`/${product.id}`} className="product-link">
+                                    {product.id}
+                                </Link>
+                            </td>
                             <td>{product.name}</td>
                             <td>{product.price}</td>
                             <td>{product.description}</td>
